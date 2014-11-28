@@ -1,36 +1,42 @@
-<article id="lead">
-  <h1>{{model.fullName}}
+{{outlet}}
+{{#unless isEditing}}
+  <article id="lead">
+    <h1>
+      {{model.fullName}}
+      {{link-to 'edit' 'lead.edit' model classNames='edit'}}
+    </h1>
 
-  <p>
-    Name: {{model.fullName}}
-  </p>
+    <p>
+      <label>Name:</label> {{model.fullName}}
+    </p>
 
-  <p>
-    Email: {{model.email}}
-  </p>
+    <p>
+      <label>Email:</label> {{model.email}}
+    </p>
 
-  <p>
-    Phone: {{model.phone}}
-  </p>
+    <p>
+      <label>Phone:</label> {{model.phone}}
+    </p>
 
-  <p>
-    Status:
-    {{view "select" content=App.Lead.STATUSES value=model.status}}
-  </p
+    <p>
+      <label>Status:</label>
+      {{view "select" content=App.Lead.STATUSES value=model.status}}
+    </p
 
-  <p>
-    Notes:<br/>
-    {{textarea value=model.notes}}
-  </p>
+    <p>
+      <label>Notes:</label><br/>
+      {{textarea value=model.notes}}
+    </p>
 
-  <p>
-    <button {{action "saveChanges"}}>Save Changes</button>
-    &nbsp;
-    {{#if showUnsavedMessage}}
-      <div class="unsaved">unsaved changes</div>
-    {{/if}}
-    {{#if isSaving}}
-      <div class="saving">saving...</div>
-    {{/if}}
-  </p>
-</article>
+    <p>
+      <button {{action "saveChanges"}}>Save Changes</button>
+      &nbsp;
+      {{#if showUnsavedMessage}}
+        <div class="unsaved">unsaved changes</div>
+      {{/if}}
+      {{#if isSaving}}
+        <div class="saving">saving...</div>
+      {{/if}}
+    </p>
+  </article>
+{{/unless}}

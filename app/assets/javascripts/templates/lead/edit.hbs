@@ -1,0 +1,34 @@
+<article id="lead">
+  <h1>{{model.fullName}}</h1>
+
+  <form>
+    <fieldset>
+      <dl>
+        <dt><label>First Name:</label></dt>
+        <dd>{{input value=model.firstName}}</dd>
+      </dl>
+
+      <dl>
+        <dt><label>Last Name:</label></dt>
+        <dd>{{input value=model.lastName}}</dd>
+      </dl>
+
+      <dl>
+        <dt><label>Email:</label></dt>
+        <dd>{{input value=model.email}}</dd>
+      </dl>
+
+      <dl>
+        <dt><label>Phone:</label></dt>
+        <dd>{{input value=model.phone}}</dd>
+      </dl>
+    </fieldset>
+
+    <fieldset>
+      <actions>
+        <button {{action "saveChanges"}}>Save Changes</button>
+        <a class="cancel" href="#" click="cancel">Cancel</a>
+      </actions>
+    </fieldset>
+  </form>
+</article>
