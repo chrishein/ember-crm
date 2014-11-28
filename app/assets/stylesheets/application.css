@@ -207,7 +207,7 @@ article#lead .saving {
   color: #00d936;
 }
 
-input, select, textarea {
+input, select, textarea, button {
   font-family: Roboto;
   font-size: 16px;
 }
@@ -222,7 +222,7 @@ label {
   width: 90px;
 }
 
-input[type='submit'] {
+input[type='submit'], button {
   background: #f57011;
   border: none;
   padding: 5px 25px 8px;

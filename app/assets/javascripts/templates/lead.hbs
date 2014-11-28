@@ -12,4 +12,25 @@
   <p>
     Phone: {{model.phone}}
   </p>
+
+  <p>
+    Status:
+    {{view "select" content=App.Lead.STATUSES value=model.status}}
+  </p
+
+  <p>
+    Notes:<br/>
+    {{textarea value=model.notes}}
+  </p>
+
+  <p>
+    <button {{action "saveChanges"}}>Save Changes</button>
+    &nbsp;
+    {{#if showUnsavedMessage}}
+      <div class="unsaved">unsaved changes</div>
+    {{/if}}
+    {{#if isSaving}}
+      <div class="saving">saving...</div>
+    {{/if}}
+  </p>
 </article>
